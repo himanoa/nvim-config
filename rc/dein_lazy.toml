@@ -1,0 +1,112 @@
+[[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
+
+[[plugins]]
+repo = 'zyphrus/denite-git.nvim'
+depends = ['denite.nvim']
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+depends = ['neosnippet-snippets']
+on_i = 1
+on_ft = ['snippet']
+
+[[plugins]]
+repo = 'python-mode/python-mode'
+on_ft = ['python']
+hook_add = '''
+let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 0
+'''
+
+[[plugins]]
+repo = 'jmcantrell/vim-virtualenv'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'Shougo/deoplete-rct'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'vim-scripts/jQuery'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html']
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['javascript']
+
+
+[[plugins]]
+repo = 'Chiel92/vim-autoformat'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'digitaltoad/vim-pug'
+on_ft = ['jade', 'pug']
+
+[[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_ft = ['javascript']
+build = 'npm install -g tern'
+hook_add='''
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = 0
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete-rct'
+on_ft = ['ruby']
+build = 'gem install rcodetools'
+
+[[plugins]]
+repo = 'rhysd/vim-textobj-ruby'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = '5t111111/denite-rails'
+on_ft = ['ruby', 'erb']
+hook_add='''
+nnoremap [rails]r :Denite<Space>rails:
+nnoremap <silent> <Space>r :<C-u>Denite<Space>rails:dwim<Return>
+nnoremap <silent> <Space>rm :<C-u>Denite<Space>rails:model<Return>
+nnoremap <silent> <Space>rc :<C-u>Denite<Space>rails:controller<Return>
+nnoremap <silent> <Space>rv :<C-u>Denite<Space>rails:view<Return>
+nnoremap <silent> <Space>rh :<C-u>Denite<Space>rails:helper<Return>
+nnoremap <silent> <Space>rr :<C-u>Denite<Space>rails:test<Return>
+'''
+
+[[plugins]]
+repo = 'dag/vim-fish'
+on_ft = ['fish']
+
+[[plugins]]
+repo = 'ponko2/deoplete-fish'
+on_ft = ['fish']
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['javascript', 'jsx']
+
+[[plugins]]
+repo = 'MaxMEllon/vim-jsx-pretty'
+on_ft = ['javascript', 'jsx']
+

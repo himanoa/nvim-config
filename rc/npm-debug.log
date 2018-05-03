@@ -1,0 +1,61 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/himanoa/.ndenv/versions/v4.2.3/bin/node',
+1 verbose cli   '/Users/himanoa/.ndenv/versions/v4.2.3/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'nyaovim' ]
+2 info using npm@3.9.2
+3 info using node@v4.2.3
+4 verbose config Skipping project config: /Users/himanoa/.npmrc. (matches userconfig)
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly fetchPackageMetaData nyaovim
+9 silly fetchOtherPackageData nyaovim
+10 silly cache add args [ 'nyaovim', null ]
+11 verbose cache add spec nyaovim
+12 silly cache add parsed spec Result {
+12 silly cache add   raw: 'nyaovim',
+12 silly cache add   scope: null,
+12 silly cache add   name: null,
+12 silly cache add   rawSpec: 'nyaovim',
+12 silly cache add   spec: '/Users/himanoa/nyaovim',
+12 silly cache add   type: 'local' }
+13 silly addLocalTarball shasum (computed) 23ac2886c0d2226080712a12b5649acea1a66547
+14 verbose addTmpTarball /Users/himanoa/nyaovim not in flight; adding
+15 verbose correctMkdir /Users/himanoa/.npm correctMkdir not in flight; initializing
+16 verbose addTmpTarball validating metadata from /Users/himanoa/nyaovim
+17 verbose tar unpack /Users/himanoa/nyaovim
+18 verbose tar unpacking to /var/folders/37/4c_4bfgx1hx0kc3y9m1vw48c0000gn/T/npm-65395-44c73445/unpack-42b011aa
+19 silly gentlyRm /var/folders/37/4c_4bfgx1hx0kc3y9m1vw48c0000gn/T/npm-65395-44c73445/unpack-42b011aa is being purged
+20 verbose gentlyRm don't care about contents; nuking /var/folders/37/4c_4bfgx1hx0kc3y9m1vw48c0000gn/T/npm-65395-44c73445/unpack-42b011aa
+21 silly gunzTarPerm modes [ '755', '644' ]
+22 error not a package /Users/himanoa/nyaovim
+23 error addLocal Could not install /Users/himanoa/nyaovim
+24 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/var/folders/37/4c_4bfgx1hx0kc3y9m1vw48c0000gn/T/npm-65395-44c73445/unpack-42b011aa/package.json'
+24 silly fetchPackageMetaData     at Error (native)
+24 silly fetchPackageMetaData  error for nyaovim { [Error: ENOENT: no such file or directory, open '/var/folders/37/4c_4bfgx1hx0kc3y9m1vw48c0000gn/T/npm-65395-44c73445/unpack-42b011aa/package.json']
+24 silly fetchPackageMetaData   errno: -2,
+24 silly fetchPackageMetaData   code: 'ENOENT',
+24 silly fetchPackageMetaData   syscall: 'open',
+24 silly fetchPackageMetaData   path: '/var/folders/37/4c_4bfgx1hx0kc3y9m1vw48c0000gn/T/npm-65395-44c73445/unpack-42b011aa/package.json' }
+25 silly rollbackFailedOptional Starting
+26 silly rollbackFailedOptional Finishing
+27 silly runTopLevelLifecycles Starting
+28 silly runTopLevelLifecycles Finishing
+29 silly install printInstalled
+30 verbose stack Error: ENOENT: no such file or directory, open '/var/folders/37/4c_4bfgx1hx0kc3y9m1vw48c0000gn/T/npm-65395-44c73445/unpack-42b011aa/package.json'
+30 verbose stack     at Error (native)
+31 verbose cwd /Users/himanoa/.config/nvim/rc
+32 error Darwin 15.5.0
+33 error argv "/Users/himanoa/.ndenv/versions/v4.2.3/bin/node" "/Users/himanoa/.ndenv/versions/v4.2.3/bin/npm" "install" "nyaovim"
+34 error node v4.2.3
+35 error npm  v3.9.2
+36 error path /var/folders/37/4c_4bfgx1hx0kc3y9m1vw48c0000gn/T/npm-65395-44c73445/unpack-42b011aa/package.json
+37 error code ENOENT
+38 error errno -2
+39 error syscall open
+40 error enoent ENOENT: no such file or directory, open '/var/folders/37/4c_4bfgx1hx0kc3y9m1vw48c0000gn/T/npm-65395-44c73445/unpack-42b011aa/package.json'
+41 error enoent ENOENT: no such file or directory, open '/var/folders/37/4c_4bfgx1hx0kc3y9m1vw48c0000gn/T/npm-65395-44c73445/unpack-42b011aa/package.json'
+41 error enoent This is most likely not a problem with npm itself
+41 error enoent and is related to npm not being able to find a file.
+42 verbose exit [ -2, true ]

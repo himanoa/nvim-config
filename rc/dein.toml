@@ -1,0 +1,318 @@
+[[plugins]]
+repo = "rhysd/clever-f.vim"
+[[plugins]]
+repo = "freeo/vim-kalisi"
+[[plugins]]
+repo = 'equalsraf/neovim-gui-shim'
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+[[plugins]]
+repo = 'cohama/lexima.vim'
+hook_add='''
+let g:lexima_enable_endwise_rules = 1
+'''
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add='''
+call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+call denite#custom#var('file_rec/git', 'command',
+\ ['git', 'ls-files', '-co', '--exclude-standard'])
+nnoremap <silent> <Space>f :<C-u>Denite
+\ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+nnoremap <silent> <Space>ff :<C-u>Denite
+\ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+noremap <silent> <Space>m :<C-u>Denite file_mru<CR>
+noremap <silent> <Space>ft :<C-u>Denite -default-action=tabopen
+\ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+noremap <silent> <Space>fs :<C-u>Denite -default-action=split
+\ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+noremap <silent> <Space>fv :<C-u>Denite -default-action=vsplit
+\ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+noremap <silent> <Space>g :<C-u>Denite grep<CR>
+noremap <silent> <Space>l :<C-u>Denite line<CR>
+noremap <silent> <Space>y :<C-u>Denite neoyank<CR>
+noremap <silent> <Space>b :<C-u>Denite buffer<CR>
+noremap <silent> <Space>u :<C-u>Denite -resume <CR>
+
+if isdirectory(".git")
+    call denite#custom#var('file_rec', 'command', ['git', 'ls-files', '-co', '--exclude-standard'])
+    call denite#custom#var('grep', 'command', ['git', '--no-pager', 'grep'])
+    call denite#custom#var('grep', 'recursive_opts', [])
+    call denite#custom#var('grep', 'final_opts', [])
+    call denite#custom#var('grep', 'separator', [])
+    call denite#custom#var('grep', 'default_opts', ['-nH'])
+endif
+'''
+
+[[plugins]]
+repo = 'lambdalisue/vim-gista'
+hook_add = '''
+let g:gista#github_user = 'AC3ROZ'
+'''
+
+[[plugins]]
+repo = 'flazz/vim-colorschemes'
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_source = '''
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#complete_method = 'omnifunc'
+let g:deoplete#omni#input_patterns.scala = [
+  \ '[^. *\t]\.\w*',       "omnicompletion for "foo.*"
+  \ '[:\[,] ?\w*',         "omnicompletion for ":*" ",*" "(*" and "[*"
+  \ '^import .*'           "omnicompletion for imports
+  \]
+'''
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'jceb/vim-hier'
+
+[[plugins]]
+repo = 'stephpy/vim-yaml'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+" f{char} to move to {char}
+map <Space>e <Plug>(easymotion-bd-f)
+nmap <Space>e <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap <Space>s <Plug>(easymotion-overwin-f2)
+" Move to line
+map <Space>L <Plug>(easymotion-bd-jk)
+nmap <Space>L <Plug>(easymotion-overwin-line)
+" Move to word
+map <Space>w <Plug>(easymotion-bd-w) nmap w <Plug>(easymotion-overwin-w)
+'''
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'rhysd/vim-operator-surround'
+hook_add='''
+map <silent> sa <Plug>(operator-surround-append)
+map <silent> sd <Plug>(operator-surround-delete)
+map <silent> sr <Plug>(operator-surround-replace)
+'''
+[[plugins]]
+repo = 'tyru/operator-camelize.vim'
+hook_add='''
+map ct  <Plug>(operator-camelize-toggle)
+'''
+[[plugins]]
+repo = 'emonkak/vim-operator-comment'
+hook_add='''
+map cc <Plug>(operator-comment)
+map cd <Plug>(operator-uncomment)
+'''
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+[[plugins]]
+repo = 'kassio/neoterm'
+hook_add='''
+noremap <C-n> :TREPLSendLine<CR>
+autocmd Filetype ruby noremap <C-t> :T rspec %<CR>
+autocmd Filetype ruby noremap <F5> :T rspec<CR>
+'''
+[[plugins]]
+repo = 'sgur/vim-textobj-parameter'
+hook_add='''
+let g:vim_textobj_parameter_mapping = ','
+'''
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+        \ 'colorscheme': 'solarized',
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'LightlineModified',
+        \   'readonly': 'LightlineReadonly',
+        \   'fugitive': 'LightlineFugitive',
+        \   'filename': 'LightlineFilename',
+        \   'fileformat': 'LightlineFileformat',
+        \   'filetype': 'LightlineFiletype',
+        \   'fileencoding': 'LightlineFileencoding',
+        \   'mode': 'LightlineMode'
+        \ }
+        \ }
+
+function! LightlineModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightlineReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! LightlineFilename()
+  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%') ? expand('%') : '[No Name]') .
+        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightlineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    return fugitive#head()
+  else
+    return ''
+  endif
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
+
+function! LightlineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+'''
+[[plugins]]
+repo = 'mbbill/undotree'
+[[plugins]]
+repo = 'Julian/vim-textobj-variable-segment'
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add='''
+let g:ale_fixers = {
+      \ 'javascript': ['prettier'],
+      \ 'typescript': ['prettier']
+      \ }
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
+'''
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'raphamorim/lucario'
+
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+hook_add='''
+let g:memolist_path = "~/memo/"
+let mapleader=","
+nnoremap <Leader>mn  :MemoNew<CR>
+nnoremap <Leader>ml  :MemoList<CR>
+nnoremap <Leader>mg  :MemoGrep<CR>
+'''
+
+[[plugins]]
+repo = 'https://github.com/kristijanhusak/vim-hybrid-material'
+
+[[plugins]]
+repo = 'https://github.com/iyuuya/denite-ale'
+
+[[plugins]]
+repo = 'MaxSt/FlatColor'
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+[[plugins]]
+repo = 'MaxMEllon/vim-jsx-pretty'
+[[plugins]]
+repo = 'prettier/vim-prettier'
+build = 'yarn install'
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft=['javascript', 'html', 'typescript']
+hook_add='''
+let g:user_emmet_install_global = 0
+autocmd FileType typescript,javascript,html,css EmmetInstall
+let g:user_emmet_leader_key='<C-E>'
+'''
+[[plugins]]
+repo = 't9md/vim-quickhl'
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+build='''
+git checkout next
+'''
+hook_add='''
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'typescript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'ruby': ['language_server-ruby']
+    \ }
+
+nnoremap <silent> <C-k> :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf'
+
+[[plugins]]
+repo = 'roxma/nvim-completion-manager'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = "lambdalisue/gina.vim"
+hook_add='''
+noremap <C-a>s :Gina status<CR>
+noremap <C-a>c :Gina commit<CR>
+'''
+
+[[plugins]]
+repo = "raghur/vim-ghost"
+hook_post_source='''
+execute ':GhostStart'
+'''
+[[plugins]]
+repo = 'ensime/ensime-vim'
+on_ft=['scala']
+hook_add='''
+let mapleader = '<SPACE>'
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <F2> :EnDeclarationSplit<CR>
+'''
