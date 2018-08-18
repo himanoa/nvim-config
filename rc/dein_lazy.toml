@@ -33,21 +33,8 @@ repo = 'zchee/deoplete-jedi'
 on_ft = ['python']
 
 [[plugins]]
-repo = 'pangloss/vim-javascript'
-on_ft = ['javascript']
-
-[[plugins]]
-repo = 'vim-scripts/jQuery'
-on_ft = ['javascript']
-
-[[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html']
-
-[[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = ['javascript']
-
 
 [[plugins]]
 repo = 'Chiel92/vim-autoformat'
@@ -56,17 +43,6 @@ on_ft = ['javascript']
 [[plugins]]
 repo = 'digitaltoad/vim-pug'
 on_ft = ['jade', 'pug']
-
-[[plugins]]
-repo = 'carlitux/deoplete-ternjs'
-on_ft = ['javascript']
-build = 'npm install -g tern'
-hook_add='''
-let g:tern_request_timeout = 1
-let g:tern_show_signature_in_pum = 0
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
-'''
 
 [[plugins]]
 repo = 'Shougo/deoplete-rct'
@@ -101,10 +77,6 @@ on_ft = ['fish']
 [[plugins]]
 repo = 'ponko2/deoplete-fish'
 on_ft = ['fish']
-
-[[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = ['javascript', 'jsx']
 
 [[plugins]]
 repo = 'MaxMEllon/vim-jsx-pretty'

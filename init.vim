@@ -32,29 +32,21 @@ if dein#check_install()
     call dein#install()
 endif
 
-filetype plugin indent on
-
 imap <C-f> <Plug>(neosnippet_expand_or_jump)
 smap <C-f> <Plug>(neosnippet_expand_or_jump)
 
 set lazyredraw
 set number
-set tabstop=2
-set autoindent
-set whichwrap=b,s,h,l,[,],<,>
-set backspace=indent,eol,start
-set virtualedit=block
-set smartindent
 set encoding=utf-8
-set shortmess+=c
 set fileencoding=utf-8
-set smarttab
-set expandtab
-set shiftwidth=2
 set showmatch
 set clipboard+=unnamedplus
 set noswapfile
-set noequalalways
+set expandtab " タブ入力を複数の空白入力に置き換える
+set tabstop=2 " 画面上でタブ文字が占める幅
+set softtabstop=2 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set smartindent " 改行時に前の行の構文をチェックし次の行のインデントを増減する
+set shiftwidth=2 " smartindentで増減する幅et noequalalways
 
 noremap <C-e> :close<CR>
 noremap <SPACE>, :noh<CR>
@@ -66,14 +58,10 @@ noremap s] <C-w>-
 noremap th gT
 noremap tl gt
 
-noremap tv :vs \| terminal<CR>
-noremap ts :sp \| terminal<CR>
-noremap tt :tabnew \| terminal<CR>
 noremap ; :
 noremap <Tab> gg
 noremap X :w<CR>
 noremap <C-o> ma<C-o>
-noremap 9 O<ESC>O
 tnoremap <ESC> <C-\><C-n>
 syntax on
 autocmd BufWritePre * :%s/\s\+$//ge
@@ -96,4 +84,4 @@ hi SpellCap cterm=underline,bold
 au BufNewFile,BufRead *.tag setf pug
 colorscheme default
 hi Cursorline ctermfg=0 ctermbg=130 gui=bold,reverse guifg=Sienna4 guibg=White
-autocmd VimEnter * call dein#call_hook('post_source')
+autocmd BufRead,BufNewFile .xonshrc setfiletype python
