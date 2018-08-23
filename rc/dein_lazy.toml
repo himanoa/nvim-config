@@ -1,64 +1,64 @@
-[[plugins]]
-repo = 'slim-template/vim-slim'
+
+Plug 'slim-template/vim-slim'
 on_ft = ['slim']
 
-[[plugins]]
-repo = 'zyphrus/denite-git.nvim'
+
+Plug 'zyphrus/denite-git.nvim'
 depends = ['denite.nvim']
 
-[[plugins]]
-repo = 'Shougo/neosnippet'
+
+Plug 'Shougo/neosnippet'
 depends = ['neosnippet-snippets']
 on_i = 1
 on_ft = ['snippet']
 
-[[plugins]]
-repo = 'python-mode/python-mode'
+
+Plug 'python-mode/python-mode'
 on_ft = ['python']
 hook_add = '''
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
 '''
 
-[[plugins]]
-repo = 'jmcantrell/vim-virtualenv'
+
+Plug 'jmcantrell/vim-virtualenv'
 on_ft = ['python']
 
-[[plugins]]
-repo = 'Shougo/deoplete-rct'
+
+Plug 'Shougo/deoplete-rct'
 on_ft = 'ruby'
 
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
+
+Plug 'zchee/deoplete-jedi'
 on_ft = ['python']
 
-[[plugins]]
-repo = 'mattn/emmet-vim'
+
+Plug 'mattn/emmet-vim'
 on_ft = ['html']
 
-[[plugins]]
-repo = 'Chiel92/vim-autoformat'
+
+Plug 'Chiel92/vim-autoformat'
 on_ft = ['javascript']
 
-[[plugins]]
-repo = 'digitaltoad/vim-pug'
+
+Plug 'digitaltoad/vim-pug'
 on_ft = ['jade', 'pug']
 
-[[plugins]]
-repo = 'Shougo/deoplete-rct'
+
+Plug 'Shougo/deoplete-rct'
 on_ft = ['ruby']
 build = 'gem install rcodetools'
 
-[[plugins]]
-repo = 'rhysd/vim-textobj-ruby'
+
+Plug 'rhysd/vim-textobj-ruby'
 on_ft = ['ruby']
 
-[[plugins]]
-repo = 'vim-ruby/vim-ruby'
+
+Plug 'vim-ruby/vim-ruby'
 on_ft = ['ruby']
 
-[[plugins]]
-repo = '5t111111/denite-rails'
+
+Plug '5t111111/denite-rails'
 on_ft = ['ruby', 'erb']
 hook_add='''
 nnoremap [rails]r :Denite<Space>rails:
@@ -70,15 +70,15 @@ nnoremap <silent> <Space>rh :<C-u>Denite<Space>rails:helper<Return>
 nnoremap <silent> <Space>rr :<C-u>Denite<Space>rails:test<Return>
 '''
 
-[[plugins]]
-repo = 'dag/vim-fish'
+
+Plug 'dag/vim-fish'
 on_ft = ['fish']
 
-[[plugins]]
-repo = 'ponko2/deoplete-fish'
+
+Plug 'ponko2/deoplete-fish'
 on_ft = ['fish']
 
-[[plugins]]
-repo = 'MaxMEllon/vim-jsx-pretty'
+
+Plug 'MaxMEllon/vim-jsx-pretty'
 on_ft = ['javascript', 'jsx']
 
